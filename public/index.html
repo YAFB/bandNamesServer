@@ -25,9 +25,18 @@
             nombre: "Yardiel",
         });
 
-        socket.on('mensaje', function(payload) {
+        socket.on('mensaje', function (payload) {
             console.log("mensaje", payload.admin);
         });
+
+        socket.on('nuevo-mensaje', function (payload) {
+            console.log("mensaje", payload.mensaje);
+        });
+
+        socket.on('active-bands', function (bands) {
+            console.clear();
+            console.table(bands);
+        })
 
     </script>
 </body>
